@@ -1,0 +1,1 @@
+/Users/duxiaodong/MVVM_kotlin2/buildSrc/build/classes/kotlin/main/AndroidConfig.class:/Users/duxiaodong/MVVM_kotlin2/buildSrc/build/classes/kotlin/main/Libs.class:/Users/duxiaodong/MVVM_kotlin2/buildSrc/build/classes/kotlin/main/Versions.class

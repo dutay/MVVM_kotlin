@@ -1,18 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion AndroidConfig.compileSdkVersion
+    buildToolsVersion AndroidConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.dxd.androidx.mvvm_kotlin"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId AndroidConfig.applicationId
+        minSdkVersion AndroidConfig.minSdkVersion
+        targetSdkVersion AndroidConfig.targetSdkVersion
+        versionCode AndroidConfig.versionCode
+        versionName AndroidConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,6 +30,7 @@ android {
     }
 
     dataBinding{
+
         enabled true
     }
     kotlinOptions {
@@ -40,33 +42,31 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation Libs.kotlin_stdlib
+    implementation Libs.core_ktx
+    implementation Libs.appcompat
+    implementation Libs.material
+    implementation Libs.constraintlayout
 
-    implementation "androidx.core:core-ktx:+"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    // RecyclerView
-    implementation 'com.google.android.material:material:1.2.1'
-    // lifecycle Deprecated
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    testImplementation Libs.junit
+    androidTestImplementation Libs.ext_junit
+    androidTestImplementation Libs.espresso_core
 
-    implementation 'androidx.lifecycle:lifecycle-livedata:2.2.0'
+    implementation Libs.lifecycle_viewmodel_ktx
+    implementation Libs.lifecycle_extensions
+
+    implementation Libs.lifecycle_livedata
 
     // okHttp 3.14
-    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+    implementation Libs.okhttp
     // Retrofit 2.9
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation Libs.retrofit2
     // Convert Google Json（Convert the result to Model）
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation Libs.gson
     // Retrofit CallAdapter convert to RxJava
-    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    implementation Libs.rxJava
     // RxAndroid 3.0
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation Libs.rxAndroid
+
 
 }
